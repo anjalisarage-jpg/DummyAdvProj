@@ -8,7 +8,7 @@ public class DemoTest1 {
 	public void testMethod()
 	{
 		System.out.println("toxic");
-		System.out.println("kgf");
+		System.out.println("kgfg");
 	}
 	
 
