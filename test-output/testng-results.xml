@@ -1,43 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Created succesfully]]>
-    </line>
-    <line>
-      <![CDATA[edited succesfully]]>
-    </line>
-    <line>
-      <![CDATA[deleted succesfully]]>
-    </line>
   </reporter-output>
-  <suite started-at="2026-07-14T17:21:27 IST" name="Default suite" finished-at="2026-07-14T17:21:27 IST" duration-ms="184">
+  <suite started-at="2026-07-14T20:23:52 IST" name="Suite" finished-at="2026-07-14T20:23:52 IST" duration-ms="106">
     <groups>
+      <group name="smoke">
+        <method signature="DemoTest1.testMethod()[pri:0, instance:TestCasePackage.DemoTest1@36bc55de]" name="testMethod" class="TestCasePackage.DemoTest1"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2026-07-14T17:21:27 IST" name="Default test" finished-at="2026-07-14T17:21:27 IST" duration-ms="184">
-      <class name="testNg.DependsOnMethod">
-        <test-method signature="createAcc()[pri:0, instance:testNg.DependsOnMethod@1d2adfbe]" started-at="2026-07-14T17:21:27 IST" name="createAcc" finished-at="2026-07-14T17:21:27 IST" duration-ms="47" status="PASS">
+    <test started-at="2026-07-14T20:23:52 IST" name="Test" finished-at="2026-07-14T20:23:52 IST" duration-ms="106">
+      <class name="TestCasePackage.DemoTest1">
+        <test-method signature="testMethod()[pri:0, instance:TestCasePackage.DemoTest1@36bc55de]" started-at="2026-07-14T20:23:52 IST" name="testMethod" finished-at="2026-07-14T20:23:52 IST" duration-ms="19" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Created succesfully]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- createAcc -->
-        <test-method signature="editAcc()[pri:0, instance:testNg.DependsOnMethod@1d2adfbe]" started-at="2026-07-14T17:21:27 IST" name="editAcc" finished-at="2026-07-14T17:21:27 IST" depends-on-methods="testNg.DependsOnMethod.createAcc" duration-ms="7" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[edited succesfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- editAcc -->
-        <test-method signature="deleteAcc()[pri:0, instance:testNg.DependsOnMethod@1d2adfbe]" started-at="2026-07-14T17:21:27 IST" name="deleteAcc" finished-at="2026-07-14T17:21:27 IST" depends-on-methods="testNg.DependsOnMethod.editAcc, testNg.DependsOnMethod.createAcc" duration-ms="2" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[deleted succesfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- deleteAcc -->
-      </class> <!-- testNg.DependsOnMethod -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testMethod -->
+      </class> <!-- TestCasePackage.DemoTest1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
