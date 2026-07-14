@@ -1,7 +1,6 @@
 package TestCasePackage;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -22,31 +21,29 @@ import ObjectRepository.CartPage1;
 import ObjectRepository.LoginPage1;
 import ObjectRepository.ProductPage1;
 
-public class AddProdToCart {
+public class AddLowProductToCart {
 
-	public static void main(String[] args) throws Throwable{
-		
+	public static void main(String[] args) throws Throwable {
 		
 		PropertiesFileUtility putil= new PropertiesFileUtility();
 		ExcelUtility eutil= new ExcelUtility();
 		WebDriverUtility wutil= new WebDriverUtility();
 		
 		//WebDriver driver= new EdgeDriver();
-		WebDriver driver= null;
+WebDriver driver= null;
 		
-	/*	FileInputStream fis= new FileInputStream("./src/test/resources/Commondata.properties");
+		/*FileInputStream fis= new FileInputStream("./src/test/resources/Commondata.properties");
 		Properties prop= new Properties();
 		prop.load(fis);
 		String BROWSER = prop.getProperty("Browser");
 		String URL = prop.getProperty("Url");
 		String USERNAME = prop.getProperty("Username");
 		String PASSWORD = prop.getProperty("Password");*/
-		
-	String BROWSER = putil.toReadDtaFromProp("Browser");
-	String URL = putil.toReadDtaFromProp("Url");
-	String USERNAME = putil.toReadDtaFromProp("Username");
-	String PASSWORD = putil.toReadDtaFromProp("Password");
-	
+
+     String BROWSER = putil.toReadDtaFromProp("Browser");
+     String URL = putil.toReadDtaFromProp("Url");
+     String USERNAME = putil.toReadDtaFromProp("Username");
+     String PASSWORD = putil.toReadDtaFromProp("Password");
 
 		
 		System.out.println(BROWSER);
@@ -72,8 +69,8 @@ public class AddProdToCart {
 		
 		/*//login
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		driver.findElement(By.id("login-button")).click();*/
+	    driver.findElement(By.id("password")).sendKeys("secret_sauce");
+	    driver.findElement(By.id("login-button")).click();*/
 		
 		/*driver.findElement(By.id("user-name")).sendKeys(USERNAME);
 		driver.findElement(By.id("password")).sendKeys(PASSWORD);
@@ -87,44 +84,44 @@ public class AddProdToCart {
 		/*FileInputStream fis1= new FileInputStream("./src/test/resources/TestData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis1);
 		Sheet sh = wb.getSheet("Products");
-		Row row = sh.getRow(1);
-		String prodname = row.getCell(2).getStringCellValue();
-		System.out.println(prodname);*/
-	    String prodname = eutil.toReadDataFromExcel("Products", 1, 2);
-		
-		//add product
-		/*driver.findElement(By.xpath("//div[text()='"+prodname+"']")).click();
-		driver.findElement(By.id("add-to-cart")).click();
-		
-		driver.findElement(By.className("shopping_cart_link")).click();*/
+		Row row = sh.getRow(5);
+		String prodname1 = row.getCell(3).getStringCellValue();
+		System.out.println(prodname1);*/
+		String prodname1 = eutil.toReadDataFromExcel("Products", 5, 3);
 	    
-	    ProductPage1 pp= new ProductPage1(driver);
-	    pp.getProd1().click();
-	    pp.getAddTocartBtn().click();
-	    pp.getCartIcon().click();
-	    
+	  //add lowest product
+	  		/*driver.findElement(By.xpath("//div[text()='"+prodname1+"']")).click();
+	  		driver.findElement(By.id("add-to-cart")).click();
+	  		
+	  		driver.findElement(By.className("shopping_cart_link")).click();*/
 		
-		//validation
-		//String cartItem = driver.findElement(By.className("inventory_item_name")).getText();
-		
-	    CartPage1 cp= new CartPage1(driver);
-	  String cartItem = cp.getInventItem().getText();
-		if(cartItem.equals(prodname))
-		{
-			System.out.println("pass");
-		}
-		else
-		{
-			System.out.println("fail");
-		}
-		
-		//logout
-		/*driver.findElement(By.id("react-burger-menu-btn")).click();
-		driver.findElement(By.id("logout_sidebar_link")).click();*/
-		
-		cp.getBurgerIcon().click();
-		cp.getLogout().click();
-		
-		driver.quit();
+		  ProductPage1 pp= new ProductPage1(driver);
+		  pp.getProd2().click();
+		  pp.getAddTocartBtn().click();
+		  pp.getCartIcon().click();
+	  		
+	  		//validation
+	  		//String cartItem = driver.findElement(By.className("inventory_item_name")).getText();
+		  CartPage1 cp= new CartPage1(driver);
+		String cartItem = cp.getInventItem().getText();
+	  		if(cartItem.equals(prodname1))
+	  		{
+	  			System.out.println("pass");
+	  		}
+	  		else
+	  		{
+	  			System.out.println("fail");
+	  		}
+	  		
+	  		//logout
+	  		/*driver.findElement(By.id("react-burger-menu-btn")).click();
+	  		driver.findElement(By.id("logout_sidebar_link")).click();*/
+	  		
+	  		cp.getBurgerIcon().click();
+			cp.getLogout().click();
+	  		
+	  		driver.quit();
+	  	}
+	  
 	}
-}
+
